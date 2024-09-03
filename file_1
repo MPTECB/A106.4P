@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout code from your Git repository
+                git url: 'https://github.com/your-repo/your-project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Run your build command, e.g., using Maven, Gradle, etc.
+                sh 'echo "Building the project..."'
+                // Replace the above with your actual build command, e.g.:
+                // sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run your tests
+                sh 'echo "Running tests..."'
+                // Replace the above with your actual
